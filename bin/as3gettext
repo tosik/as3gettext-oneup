@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'as3gettext/command'
+rescue LoadError
+  require 'rubygems'
+  require 'as3gettext/command'
+end
+
+As3gettext::Command.new.run ARGV
