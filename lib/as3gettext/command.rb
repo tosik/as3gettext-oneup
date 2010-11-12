@@ -1,6 +1,6 @@
 require 'optparse'
 require 'gettext'
-require 'gettext/rgettext'
+require 'gettext/tools/rgettext'
 require 'as3gettext/as3_parser'
 require 'as3gettext/generate_xml'
 

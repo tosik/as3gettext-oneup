@@ -1,6 +1,5 @@
 require 'gettext'
-require 'gettext/poparser'
-require 'gettext/mo'
+require 'gettext/tools/poparser'
 require 'builder'
 require 'pathname'
 

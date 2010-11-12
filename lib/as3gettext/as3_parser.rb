@@ -1,5 +1,5 @@
 require 'gettext'
-require 'gettext/rgettext'
+require 'gettext/tools/rgettext'
 
 module As3gettext
   module As3Parser
