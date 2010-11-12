@@ -17,7 +17,7 @@ DESCRIPTION       = "gettext for actionscript"
 RUBYFORGE_PROJECT = "hotchpotch"
 HOMEPATH          = "http://#{RUBYFORGE_PROJECT}.rubyforge.org/rascut/"
 BIN_FILES         = %w(as3gettext)
-VERS              = "0.0.1"
+VERS              = "0.0.2"
 
 REV = File.read(".svn/entries")[/committed-rev="(d+)"/, 1] rescue nil
 CLEAN.include ['**/.*.sw?', '*.gem', '.config']
@@ -115,9 +115,11 @@ task :release => [:clean, :package] do |t|
   abort "Versions don't match #{v} vs #{VERS}" unless v == VERS
   pkg = "pkg/#{NAME}-#{VERS}"
 
+  require "rubyforge"
   rf = RubyForge.new
   puts "Logging in"
   rf.login
+  p rf
 
   c = rf.userconfig
 # c["release_notes"] = description if description
