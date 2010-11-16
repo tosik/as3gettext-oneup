@@ -1,26 +1,41 @@
 
 = as3gettext-oneup
 
-This is forked from http://coderepos.org/share/browser/lang/ruby/as3gettext/trunk/
+This is forked from http://coderepos.org/share/browser/lang/ruby/as3gettext/trunk
 
 == Description
+
+gettext for ActionScript3
 
 
 == Installation
 
-=== Archive Installation
-
-	rake install
-
 === Gem Installation
 
-	gem install as3gettext-oneup
+  % gem install as3gettext-oneup
 
+
+== Usage
+
+  % as3gettext -h
+    $ as3gettext src/HelloWrold.as src/**/*.mxml -o template.pot
+    $ as3gettext i18n/**.po -x -o langs.xml
+        -h, --help                       show this message
+        -x                               export XML
+        -o=VAL                           output file
+
+
+Copy as3lib/* to your as3 src directory.
+
+in your as code:
+  // initialize
+  var xml_string:String = load(langs.xml); // load langs.xml
+  com.rails2u.gettext.GetText.initLangFile(new XML(xml_string));
+
+  // use _() function
+  trace(_("foo")) //=> "bar"
 
 == Features/Problems
-
-
-== Synopsis
 
 
 == Copyright
