@@ -1,3 +1,7 @@
+== 0.0.3 / 2010-11-17
+
+* added gettext as3 library generator
+
 == 0.0.2 / 2010-11-12
 
 * fixed for gettext 2.1.0
