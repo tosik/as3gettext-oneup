@@ -1,9 +1,10 @@
+# coding: utf-8
+
 require 'gettext'
 require 'gettext/tools/poparser'
 require 'builder'
 require 'pathname'
 
-$KCODE = 'u'
 $DEBUG = false
 
 module As3gettext
