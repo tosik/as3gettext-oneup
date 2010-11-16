@@ -45,6 +45,7 @@ module As3gettext
       op.on('-h', '--help', 'show this message') { puts op; Kernel::exit 1 }
       op.on('-x', 'export XML') { config[:mode] = :xml }
       op.on('-o=VAL', 'output file') {|v| config[:output] = v }
+      op.version = IO.read(File.join(File.dirname(__FILE__), '..', '..', "VERSION"))
       op.parse! argv
       if argv.length == 0
         puts op
