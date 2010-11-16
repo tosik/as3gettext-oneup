@@ -20,12 +20,15 @@ gettext for ActionScript3
   % as3gettext -h
     $ as3gettext src/HelloWrold.as src/**/*.mxml -o template.pot
     $ as3gettext i18n/**.po -x -o langs.xml
+    $ as3gettext -g path/to/your/as3/src
         -h, --help                       show this message
         -x                               export XML
         -o=VAL                           output file
+        -g=VAL                           generate as3 library
 
 
-Copy as3lib/* to your as3 src directory.
+Generating gettext as3 library to your as3 src directory
+  % as3gettext -g path/to/your/as3/src
 
 in your as code:
   // initialize

@@ -3,6 +3,7 @@ require 'gettext'
 require 'gettext/tools/rgettext'
 require 'as3gettext/as3_parser'
 require 'as3gettext/generate_xml'
+require 'fileutils'
 
 module As3gettext
   class Command
@@ -35,19 +36,27 @@ module As3gettext
       end
     end
 
+    def as3lib
+      Dir.glob(File.join(File.dirname(__FILE__), '..', '..', 'as3lib', '*')).each do |src|
+        FileUtils.cp_r(src, File.join(config[:as3lib_dir], ''))
+      end
+    end
+
     def parse(argv)
       op = OptionParser.new
       op.banner = <<-EOF.gsub(/^\s+/, '')
-        Usage: 
+        Usage:
         $ as3gettext src/HelloWrold.as src/**/*.mxml -o template.pot
-        $ as3gettext i18n/**.po -x -o langs.xml 
+        $ as3gettext i18n/**.po -x -o langs.xml
+        $ as3gettext -g path/to/your/as3/src
       EOF
       op.on('-h', '--help', 'show this message') { puts op; Kernel::exit 1 }
       op.on('-x', 'export XML') { config[:mode] = :xml }
       op.on('-o=VAL', 'output file') {|v| config[:output] = v }
-      op.version = IO.read(File.join(File.dirname(__FILE__), '..', '..', "VERSION"))
+      op.on('-g=VAL', 'generate as3 library') {|v| config[:mode] = :as3lib; config[:as3lib_dir] = v }
+      op.version = IO.read(File.join(File.dirname(__FILE__), '..', '..', 'VERSION'))
       op.parse! argv
-      if argv.length == 0
+      if config[:mode] != :as3lib && argv.empty?
         puts op
         exit 1
       end
