@@ -1,6 +1,7 @@
 
-= as3gettext
+= as3gettext-oneup
 
+This is forked from http://coderepos.org/share/browser/lang/ruby/as3gettext/trunk/
 
 == Description
 
@@ -13,7 +14,7 @@
 
 === Gem Installation
 
-	gem install as3gettext
+	gem install as3gettext-oneup
 
 
 == Features/Problems
@@ -24,6 +25,7 @@
 
 == Copyright
 
+=== Original
 Author::    Yuichi Tateno <hotchpotch@no.spam@gmail.com>
 Copyright:: Copyright (c) 2008 Yuichi Tateno
 License::  MIT License

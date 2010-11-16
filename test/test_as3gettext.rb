@@ -1,7 +1,4 @@
 require 'helper'
 
-class TestAs3gettextOneupA < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
-  end
+class TestAs3gettext < Test::Unit::TestCase
 end
