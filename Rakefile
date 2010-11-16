@@ -11,6 +11,7 @@ begin
     gem.homepage = "http://github.com/tosik/as3gettext-oneup"
     gem.authors = ["Yuichi Tateno", "Toshiyuki Hirooka"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_dependency "gettext", ">= 2.0.0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
