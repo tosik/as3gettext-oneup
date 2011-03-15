@@ -1,7 +1,9 @@
 
-*DEPRECATED*
-*DO NOT USE/FORK THIS.*
-*MASTER VERSION IS https://github.com/one-up/as3gettext-oneup .*
+*
+DEPRECATED
+DO NOT USE/FORK THIS.
+MASTER VERSION IS https://github.com/one-up/as3gettext-oneup .
+*
 
 = as3gettext-oneup
 
